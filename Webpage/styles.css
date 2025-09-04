@@ -1,0 +1,304 @@
+/* NDI AI Benchmarks - Neobrutalist Stylesheet */
+
+:root {
+  --red: #FF1744;
+  --blue: #2196F3;
+  --yellow: #FFD700;
+  --black: #000000;
+  --white: #FFFFFF;
+  --gray-light: #F5F5F5;
+  --gray-dark: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+header {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 15px solid var(--red);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.benchmark-group {
+  margin-bottom: 2rem;
+  border: 8px solid var(--black);
+  background-color: var(--white);
+  box-shadow: 15px 15px 0px var(--black);
+  transition: all 0.3s ease;
+}
+
+.benchmark-group:hover {
+  box-shadow: 20px 20px 0px var(--black);
+  transform: translate(-5px, -5px);
+}
+
+.group-header {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid var(--black);
+  transition: background-color 0.3s ease;
+}
+
+.group-header:hover {
+  background-color: #E0143C;
+}
+
+.group-header h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.toggle-icon {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.group-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background-color: var(--gray-light);
+}
+
+.group-content.expanded {
+  max-height: 2000px;
+}
+
+.benchmark-item {
+  padding: 1.5rem;
+  border-bottom: 2px solid var(--black);
+  transition: background-color 0.3s ease;
+}
+
+.benchmark-item:hover {
+  background-color: var(--yellow);
+}
+
+.benchmark-item:last-child {
+  border-bottom: none;
+}
+
+.benchmark-item h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 0.25rem;
+}
+
+.benchmark-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--gray-dark);
+}
+
+/* Different colors for different groups */
+.benchmark-group[data-group="reasoning"] .group-header {
+  background-color: var(--red);
+}
+
+.benchmark-group[data-group="code-review"] .group-header {
+  background-color: var(--blue);
+}
+
+.benchmark-group[data-group="learning"] .group-header {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.benchmark-group[data-group="html-css"] .group-header {
+  background-color: var(--red);
+}
+
+.benchmark-group[data-group="threejs-physics"] .group-header {
+  background-color: var(--blue);
+}
+
+.benchmark-group[data-group="pygame-physics"] .group-header {
+  background-color: var(--yellow);
+  color: var(--black);
+}
+
+.benchmark-group[data-group="java-math"] .group-header {
+  background-color: var(--red);
+}
+
+.benchmark-group[data-group="cross-tech"] .group-header {
+  background-color: var(--blue);
+}
+
+.benchmark-group[data-group="learning"] .group-header:hover,
+.benchmark-group[data-group="pygame-physics"] .group-header:hover {
+  background-color: #E6C200;
+}
+
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2rem;
+  text-align: center;
+  border-top: 15px solid var(--red);
+  margin-top: 3rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--yellow);
+}
+
+.contact {
+  font-size: 1rem;
+  opacity: 0.8;
+  text-transform: lowercase;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  .benchmark-group {
+    margin-bottom: 1.5rem;
+    border-width: 6px;
+    box-shadow: 10px 10px 0px var(--black);
+  }
+
+  .group-header {
+    padding: 1rem;
+  }
+
+  .group-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .benchmark-item {
+    padding: 1rem;
+  }
+
+  .benchmark-item h3 {
+    font-size: 1rem;
+  }
+
+  .benchmark-item p {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .benchmark-group {
+    border-width: 4px;
+    box-shadow: 8px 8px 0px var(--black);
+  }
+
+  .group-header h2 {
+    font-size: 1rem;
+  }
+
+  .benchmark-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for toggle */
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Focus states for accessibility */
+.group-header:focus {
+  outline: 3px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .benchmark-group {
+    box-shadow: none;
+    border: 2px solid var(--black);
+    break-inside: avoid;
+  }
+
+  .group-content {
+    max-height: none !important;
+  }
+
+  .toggle-icon {
+    display: none;
+  }
+}

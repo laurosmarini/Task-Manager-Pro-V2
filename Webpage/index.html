@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NDI AI BENCHMARKS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>NDI AI BENCHMARKS</h1>
+        <p class="subtitle">COMPREHENSIVE AI TESTING SUITE</p>
+    </header>
+
+    <main>
+        <div class="benchmark-group" data-group="reasoning">
+            <div class="group-header" onclick="toggleGroup('reasoning')">
+                <h2>REASONING & LOGIC</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>SOLVE: THREE MISLABELED FRUIT BOXES</h3>
+                    <p>Three mislabeled fruit boxes (Apples, Oranges, Mixed). Every label is wrong. Choose one fruit from one box to relabel all; explain steps.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>PLAN WITH CONSTRAINTS</h3>
+                    <p>Allocate a $8k security budget over 90 days with 10 eng-days/month and no downtime; provide week-by-week actions and rationale.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DEDUCTIVE PUZZLE</h3>
+                    <p>If all A are B, some B are C, and no C are D, can some A be not D? Show the full logical derivation.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>SCHEDULING</h3>
+                    <p>Four people with overlapping constraints; produce three valid 1-hour meeting slots and justify each conflict resolution.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>HYPOTHESIS TESTING</h3>
+                    <p>Engagement down 15% after feature release, campaign, and competitor price cut. Propose ranked hypotheses and an experiment plan.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="code-review">
+            <div class="group-header" onclick="toggleGroup('code-review')">
+                <h2>CODE REVIEW & DEBUGGING</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>GENERAL CODE REVIEW</h3>
+                    <p>Act as a senior engineer. Review the following code for correctness, readability, maintainability, and testability. Identify issues by severity (blocker/major/minor) and propose concrete fixes with short justifications.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>STRUCTURED REVIEW SECTIONS</h3>
+                    <p>Produce a structured review with sections: Summary, Strengths, Risks, Bugs, Design Concerns, Naming/Style, Tests Missing, Suggested Refactors. End with a prioritized fix list and estimated effort.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>TEAM STANDARDS EVALUATION</h3>
+                    <p>Evaluate adherence to team standards (lint rules, naming, layering). Point out deviations and suggest changes with code diffs. Include at least three targeted unit tests to add.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>FUNCTION ANALYSIS</h3>
+                    <p>For each function, list preconditions, postconditions, and invariants inferred from the code. Flag any violations or missing checks and show how to enforce them.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>CODE CLEANUP</h3>
+                    <p>Identify dead code, feature flags past expiry, or unreachable branches. Propose a safe removal plan and tests ensuring no behavior change.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DEBUGGING WITH SYMPTOMS</h3>
+                    <p>Given a bug report (steps to reproduce, expected vs actual), isolate likely fault lines in the code. Propose a minimal change that fixes the bug and attach micro tests demonstrating the failure and the fix.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>FAILING TEST ANALYSIS</h3>
+                    <p>Explain a failing test by tracing data flow through the code. Include a rough call graph and the first line where state diverges from expectation.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>INTERMITTENT BUG DIAGNOSIS</h3>
+                    <p>For an intermittent bug, propose a logging/trace plan: what to log, where, and at which levels to minimize noise while capturing root cause. Provide redaction rules.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>MEMORY LEAK REPRODUCTION</h3>
+                    <p>Reproduce a memory leak hypothesis: identify allocations without release paths, propose ownership changes or RAII/with-context usage, and write a small repro harness.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>PERFORMANCE REGRESSION</h3>
+                    <p>Diagnose a performance regression: instrument with lightweight timers, produce a flame-like breakdown (text), identify hot paths, and propose two alternative fixes with complexity analysis.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="learning">
+            <div class="group-header" onclick="toggleGroup('learning')">
+                <h2>LEARNING & EDUCATION</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>EXPLAIN USING ANALOGIES</h3>
+                    <p>"Explain the concept of (concept/theory) using an analogy or comparison to something familiar. Make it relatable and easy to understand with clear examples."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>QUICK REFERENCE GUIDE</h3>
+                    <p>"Create a quick reference guide for (skill/subject) that includes essential formulas, key points, and concise summaries for easy review."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>INTERACTIVE ACTIVITIES</h3>
+                    <p>"Suggest interactive activities or exercises that will help me actively engage with and better understand (topic/skill). Include step-by-step instructions and expected outcomes."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>REAL-WORLD APPLICATIONS</h3>
+                    <p>"Provide real-world scenarios or applications where I can apply (concept/skill) to reinforce my learning. Include detailed examples and practical exercises."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>COMMON MISTAKES & PITFALLS</h3>
+                    <p>"List common mistakes or pitfalls to avoid when learning (skill/subject) and provide strategies for overcoming them. Include tips for maintaining good practices."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DAILY PRACTICE ROUTINE</h3>
+                    <p>"Design a daily practice routine to help me steadily improve in (skill/subject) over time. Include specific exercises, time allocations, and progression milestones."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>MNEMONIC DEVICES</h3>
+                    <p>"Create mnemonic devices to help me remember important information related to (topic/subject). Explain how each mnemonic works and provide examples."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ACHIEVABLE GOALS</h3>
+                    <p>"Break down (skill/subject) into small, achievable goals that will keep me motivated and on track. Include a timeline and criteria for measuring success."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>STUDY GROUP FORMATION</h3>
+                    <p>"Suggest ways to find or create a study group or learning community to practice and discuss (skill/subject) with peers. Include strategies for effective group learning."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>SPACED REPETITION</h3>
+                    <p>"Set up a spaced repetition schedule to review and retain information for (topic/subject). Include intervals, review methods, and tips for long-term retention."</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>MATH-INTENSIVE TASK</h3>
+                    <p>"Write a math-intensive task: Derive the formula for the volume of a sphere."</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="html-css">
+            <div class="group-header" onclick="toggleGroup('html-css')">
+                <h2>HTML/CSS DEVELOPMENT</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>E-COMMERCE PRODUCT PAGE</h3>
+                    <p>Create a fully responsive e-commerce product page using semantic HTML5 and CSS3 with Flexbox layout. Implement a mobile-first approach with hamburger menu navigation that transforms to standard navigation at 768px breakpoint.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>CSS ANIMATION PORTFOLIO</h3>
+                    <p>Build a CSS animation portfolio piece that demonstrates mastery of keyframes, transforms, and transitions. Include at least 3 different animation sequences that trigger on scroll using only CSS (no JavaScript).</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ACCESSIBLE LOGIN FORM</h3>
+                    <p>Develop a fully accessible login form (WCAG 2.1 compliant) with proper ARIA labels, error validation states, and focus management using only HTML and CSS.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>RESPONSIVE PHOTO GALLERY</h3>
+                    <p>Create a responsive photo gallery with lightbox functionality using CSS Grid. Implement hover effects, responsive image sizing, and proper aspect ratio preservation without JavaScript.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>MULTI-COLUMN BLOG LAYOUT</h3>
+                    <p>Build a multi-column blog layout with CSS Grid that features a sticky sidebar, responsive typography, and print-friendly media queries.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>CSS LOADING SPINNER</h3>
+                    <p>Implement a pure CSS animated loading spinner with 5 different animation variations that respond to different states (loading, success, error, etc.).</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>RESPONSIVE PRICING TABLE</h3>
+                    <p>Create a responsive pricing table with comparison features using CSS variables for theming. The table should collapse appropriately on mobile and include hover effects on desktop.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DARK/LIGHT MODE TOGGLE</h3>
+                    <p>Develop a CSS-only dark/light mode toggle that persists user preference using CSS variables and localStorage (via minimal inline JavaScript for storage only).</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ACCESSIBLE NAVIGATION BAR</h3>
+                    <p>Build a responsive navigation bar with dropdown menus that meets accessibility standards, includes skip navigation links, and works in all major browsers.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>CSS IMAGE CAROUSEL</h3>
+                    <p>Create a responsive image carousel using only HTML and CSS (no JavaScript) with proper keyboard navigation support and ARIA roles for accessibility.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="threejs-physics">
+            <div class="group-header" onclick="toggleGroup('threejs-physics')">
+                <h2>JAVASCRIPT/THREE.JS 3D PHYSICS</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>BASIC PHYSICS SIMULATION</h3>
+                    <p>Implement a basic physics simulation using Three.js and Physijs where multiple geometric shapes fall and collide with realistic physics properties.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>RIGID BODY DYNAMICS</h3>
+                    <p>Create a JavaScript 3D physics demo using Ammo.js and Three.js that demonstrates rigid body dynamics with at least 5 interacting objects with different physical properties.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>GRAVITY SIMULATION</h3>
+                    <p>Build a Three.js scene with realistic gravity simulation where objects interact with proper collision detection and response using a physics engine.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>CLOTH PHYSICS</h3>
+                    <p>Develop a JavaScript physics simulation that demonstrates cloth physics in Three.js, allowing user interaction through mouse events to manipulate the fabric.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>3D BALL MAZE GAME</h3>
+                    <p>Create a 3D ball maze game using Three.js where the player tilts the maze (via mouse or device orientation) to navigate a ball to the goal, incorporating proper physics.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>VEHICLE PHYSICS</h3>
+                    <p>Implement a vehicle physics simulation in Three.js with working suspension, wheel rotation, and realistic movement on varied terrain.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>WATER EFFECTS SIMULATION</h3>
+                    <p>Build a JavaScript 3D physics demo that simulates water effects using particle systems in Three.js with realistic object buoyancy and fluid dynamics.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DESTRUCTION SIMULATION</h3>
+                    <p>Create a destruction simulation in Three.js where a structure collapses with realistic physics when a force is applied, using appropriate physics libraries.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>SOFT BODY PHYSICS</h3>
+                    <p>Develop a Three.js scene with soft body physics simulation, demonstrating deformable objects that interact with rigid bodies in a realistic manner.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ROPE PHYSICS</h3>
+                    <p>Implement a JavaScript physics simulation that demonstrates rope physics in Three.js with proper tension, collision, and user interaction capabilities.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="pygame-physics">
+            <div class="group-header" onclick="toggleGroup('pygame-physics')">
+                <h2>PYTHON/PYGAME PHYSICS</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>2D PHYSICS SIMULATION</h3>
+                    <p>Create a 2D physics simulation in Python using Pygame that demonstrates accurate gravity, collision detection, and momentum conservation with at least 10 interacting objects.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>PARTICLE SYSTEM</h3>
+                    <p>Build a particle system simulation in Pygame that demonstrates fluid dynamics with adjustable parameters for viscosity, density, and external forces.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>RAGDOLL PHYSICS</h3>
+                    <p>Implement a 2D ragdoll physics system in Pygame with proper joint constraints and realistic movement when subjected to forces.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>PROJECTILE MOTION</h3>
+                    <p>Create a Python physics simulation using Pygame that demonstrates realistic projectile motion with air resistance, variable gravity, and collision response.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>PLATFORMER PHYSICS ENGINE</h3>
+                    <p>Build a 2D platformer physics engine from scratch in Python/Pygame that handles slopes, moving platforms, and proper character movement physics.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>SOFT BODY SIMULATION</h3>
+                    <p>Implement a soft body physics simulation in Pygame using a mass-spring system that demonstrates realistic deformation and collision response.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ORBITAL MECHANICS</h3>
+                    <p>Create a Python physics simulation that demonstrates orbital mechanics using Pygame, allowing users to adjust mass, velocity, and gravitational constants.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>FLUID SIMULATION</h3>
+                    <p>Build a 2D fluid simulation in Pygame that demonstrates realistic water behavior with surface tension, buoyancy, and object interaction.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>VEHICLE PHYSICS</h3>
+                    <p>Implement a 2D vehicle physics simulation in Pygame with working suspension, wheel friction, and realistic handling characteristics.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>NON-SPHERICAL COLLISION</h3>
+                    <p>Create a non-spherical collision detection system in Pygame using pixel-perfect collision or polygon-based physics for irregular shapes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="java-math">
+            <div class="group-header" onclick="toggleGroup('java-math')">
+                <h2>JAVA MATHEMATICS</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>FAST FOURIER TRANSFORM</h3>
+                    <p>Write a Java program that implements the Fast Fourier Transform algorithm with visualization of the frequency spectrum for input audio data.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>LINEAR EQUATIONS SOLVER</h3>
+                    <p>Create a Java application that solves systems of linear equations using LU decomposition, with step-by-step explanation of the matrix operations.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>DIJKSTRA'S ALGORITHM</h3>
+                    <p>Implement Dijkstra's algorithm in Java with visualization of the shortest path calculation on a weighted graph, including animation of the search process.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>FRACTAL GENERATION</h3>
+                    <p>Write a Java program that generates and renders fractals (Mandelbrot or Julia sets) with adjustable parameters and zoom functionality.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>RSA ENCRYPTION</h3>
+                    <p>Create a Java application that implements the RSA encryption algorithm with visualization of the mathematical operations involved in key generation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benchmark-group" data-group="cross-tech">
+            <div class="group-header" onclick="toggleGroup('cross-tech')">
+                <h2>ADVANCED CROSS-TECHNOLOGY</h2>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="group-content">
+                <div class="benchmark-item">
+                    <h3>FULL-STACK MATH OPTIMIZATION</h3>
+                    <p>Build a full-stack application where a Python backend (Flask) processes complex mathematical optimizations, with results visualized in a Three.js 3D physics simulation in the frontend.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>WEB PHYSICS DESIGNER</h3>
+                    <p>Create a web application that allows users to design 2D physics simulations in the browser (using HTML5 Canvas), with the ability to export the simulation parameters to a Java-based high-precision solver.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>ML PHYSICS PREDICTION</h3>
+                    <p>Implement a machine learning model in Python (TensorFlow/PyTorch) that predicts 3D physics outcomes, with results displayed in an interactive Three.js visualization that allows comparison with actual physics simulations.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>MATH PROBLEM SOLVER</h3>
+                    <p>Develop a responsive web application using HTML/CSS/JavaScript that allows users to input mathematical problems, with a Java backend solving complex equations and returning step-by-step solutions with visualizations.</p>
+                </div>
+                <div class="benchmark-item">
+                    <h3>HYBRID COMPUTATION SYSTEM</h3>
+                    <p>Create a hybrid application that uses Python for mathematical computation, Java for complex algorithm processing, and Three.js for 3D visualization of physics simulations, with all components communicating via REST API.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="brand">NODAYSIDLE</p>
+            <p class="contact">info@nodaysidle.com</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
