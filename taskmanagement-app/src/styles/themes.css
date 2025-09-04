@@ -1,0 +1,259 @@
+/* Theme Variables */
+:root {
+  /* Light Theme Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --bg-modal: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #f3f4f6;
+  --bg-active: #eff6ff;
+
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --text-inverse: #ffffff;
+
+  --border-primary: #e5e7eb;
+  --border-secondary: #d1d5db;
+  --border-focus: #3b82f6;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  --accent-primary: #3b82f6;
+  --accent-secondary: #6366f1;
+  --accent-success: #10b981;
+  --accent-warning: #f59e0b;
+  --accent-error: #ef4444;
+
+  --priority-high: #ef4444;
+  --priority-medium: #f59e0b;
+  --priority-low: #10b981;
+
+  --status-active: #3b82f6;
+  --status-completed: #10b981;
+  --status-overdue: #ef4444;
+}
+
+/* Dark Theme Colors */
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --bg-modal: #1e293b;
+  --bg-card: #1e293b;
+  --bg-hover: #334155;
+  --bg-active: #1e40af;
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-inverse: #0f172a;
+
+  --border-primary: #334155;
+  --border-secondary: #475569;
+  --border-focus: #60a5fa;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+
+  --accent-primary: #60a5fa;
+  --accent-secondary: #818cf8;
+  --accent-success: #34d399;
+  --accent-warning: #fbbf24;
+  --accent-error: #f87171;
+
+  --priority-high: #f87171;
+  --priority-medium: #fbbf24;
+  --priority-low: #34d399;
+
+  --status-active: #60a5fa;
+  --status-completed: #34d399;
+  --status-overdue: #f87171;
+}
+
+/* Theme Transitions */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme-specific component styles */
+[data-theme="light"] .sidebar {
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-primary);
+}
+
+[data-theme="dark"] .sidebar {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-primary);
+}
+
+[data-theme="light"] .header {
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+[data-theme="dark"] .header {
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+[data-theme="light"] .task-item,
+[data-theme="light"] .note-item,
+[data-theme="light"] .card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+}
+
+[data-theme="dark"] .task-item,
+[data-theme="dark"] .note-item,
+[data-theme="dark"] .card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-primary);
+}
+
+[data-theme="light"] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme="light"] .modal {
+  background-color: var(--bg-modal);
+  border: 1px solid var(--border-primary);
+}
+
+[data-theme="dark"] .modal {
+  background-color: var(--bg-modal);
+  border: 1px solid var(--border-primary);
+}
+
+/* Button theme variants */
+[data-theme="light"] .btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+[data-theme="light"] .btn-primary:hover {
+  background-color: #2563eb;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: var(--accent-primary);
+  color: var(--text-inverse);
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: #3b82f6;
+}
+
+[data-theme="light"] .btn-secondary {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+[data-theme="light"] .btn-secondary:hover {
+  background-color: var(--bg-hover);
+}
+
+[data-theme="dark"] .btn-secondary {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-primary);
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: var(--bg-hover);
+}
+
+/* Form elements */
+[data-theme="light"] .input,
+[data-theme="light"] .select,
+[data-theme="light"] .textarea {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .input:focus,
+[data-theme="light"] .select:focus,
+[data-theme="light"] .textarea:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+[data-theme="dark"] .input,
+[data-theme="dark"] .select,
+[data-theme="dark"] .textarea {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .input:focus,
+[data-theme="dark"] .select:focus,
+[data-theme="dark"] .textarea:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Badge styles */
+[data-theme="light"] .badge-high {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--priority-high);
+}
+
+[data-theme="light"] .badge-medium {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--priority-medium);
+}
+
+[data-theme="light"] .badge-low {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--priority-low);
+}
+
+[data-theme="dark"] .badge-high {
+  background-color: rgba(248, 113, 113, 0.2);
+  color: var(--priority-high);
+}
+
+[data-theme="dark"] .badge-medium {
+  background-color: rgba(251, 191, 36, 0.2);
+  color: var(--priority-medium);
+}
+
+[data-theme="dark"] .badge-low {
+  background-color: rgba(52, 211, 153, 0.2);
+  color: var(--priority-low);
+}
+
+/* Stats cards */
+[data-theme="light"] .stat-card {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .stat-card {
+  background-color: var(--bg-card);
+  box-shadow: var(--shadow-md);
+}
+
+/* Priority indicators */
+.task-item[data-priority="high"]::before {
+  background-color: var(--priority-high);
+}
+
+.task-item[data-priority="medium"]::before {
+  background-color: var(--priority-medium);
+}
+
+.task-item[data-priority="low"]::before {
+  background-color: var(--priority-low);
+}
